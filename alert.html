@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>桔子快贷</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	    <meta name="description" content="米嗦科技,2分钟,三个步骤,极速放款">
+	    <meta name="keywords" content="米嗦科技,极速放款,最快的小额借贷">
+	    <meta http-equiv="pragma" content="no-cache">
+	    <meta http-equiv="cache-control" content="no-cache">
+	    <meta http-equiv="X-UA-Compatible" content="edge">
+	    <meta http-equiv="expires" content="0">
+	    <meta name="format-detection" content="telephone=no,email=no">
+	    <!-- uc强制竖屏 -->
+	    <meta name="screen-orientation" content="portrait">
+	    <!-- QQ强制竖屏 -->
+	    <meta name="x5-orientation" content="portrait">
+	    <!--<script src="http://cdn.bootcss.com/jquery/2.2.0/jquery.js"></script>-->
+	    <script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+	    <style type="text/css">
+	    	*{padding:0;margin:0}
+			body{background:#FFF;min-width: 320px;}
+			.flex-container{display:-webkit-flex;display:flex;background-color:rgba(211,211,211,0.611764705882353);position:fixed;height:100%;width:100%;top:0;left:0;bottom:0}
+			.flex-item{width:65%;height:105px;background-color:#FFF;margin:auto;border-radius:10px;box-shadow:0px 1px 5px 0px #868484}
+			.flex-item .title1{padding:20px 0px;text-align:center;border-bottom:1px solid #dbdbdb}
+			.flex-item .title2{color:orangered;text-align:center;line-height:2.5;cursor:pointer}
+	    </style>
+	    <script type="text/javascript">
+	    	$(document).ready(function(){
+			  	$("button").click(function(){
+			  		$(".container").toggle();
+			  	})
+			  	
+			  	$(".title2").click(function(){
+			  		$(".container").hide();
+			  	})
+			})
+	    </script>
+	</head>
+	<body>
+		<button>点击</button>
+		<div class="container">
+			<div class="flex-container">
+			  <div class="flex-item">
+			  		<p class="title1">认证成功！</p>
+			  		<p class="title2">知道了</p>
+			  </div>
+			</div>
+		</div>
+	</body>
+</html>

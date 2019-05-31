@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+		var num=5;
+		function startTime() {
+		    document.getElementById("txt").innerHTML = num;
+			num--;
+		    var myVar=setTimeout(function(){ 
+		    	if(num>0){
+		    		startTime();
+		    	}else{
+		    		clearTimeout(myVar);
+		    		window.open("https://gx.mzzckj.com/cpile_view/#/login","_self","","");
+		    	}
+		    }, 1000);
+		}
+		</script>
+		<style type="text/css">
+		*{padding: 0;margin: 0;}
+		body{background: white;}
+		.logo-box {
+		    height: 100px;
+		    margin-left: 300px;
+		    background: url(img/logo.png) no-repeat 0 center;
+		}
+		.main{    
+			text-align: center;
+    		margin-top: 5%;
+		    margin-bottom: 20px;}
+    	h2{
+    		text-align: center;
+	    	font-family: "幼圆";
+   			font-weight: 500;
+    	}
+    	.title{
+    		text-align: center;
+    		margin: 10px;
+    		font-size: 18px;
+    	}
+		</style>
+	</head>
+	
+	<body onload="startTime()">
+		<header>
+			<div class="logo-box"></div>
+		</header>
+		<section>
+			<div class="main"><img src="img/404.png"/></div>
+			<h2>出错啦！你访问的页面不存在~</h2>
+			<div class="title"><span id="txt"></span>秒后页面自动跳转</div>
+		</section>
+	</body>
+</html>

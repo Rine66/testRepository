@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>桔子快贷</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	    <meta name="description" content="米嗦科技,2分钟,三个步骤,极速放款">
+	    <meta name="keywords" content="米嗦科技,极速放款,最快的小额借贷">
+	    <meta http-equiv="pragma" content="no-cache">
+	    <meta http-equiv="cache-control" content="no-cache">
+	    <meta http-equiv="X-UA-Compatible" content="edge">
+	    <meta http-equiv="expires" content="0">
+	    <meta name="format-detection" content="telephone=no,email=no">
+	    <!-- uc强制竖屏 -->
+	    <meta name="screen-orientation" content="portrait">
+	    <!-- QQ强制竖屏 -->
+	    <meta name="x5-orientation" content="portrait">
+	    <!--<script src="http://cdn.bootcss.com/jquery/2.2.0/jquery.js"></script>-->
+	    <script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+	    <style type="text/css">
+	    	*{padding:0;margin:0}
+	    	body{min-width: 320px;background-color: #FFF;font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;}
+			.head{height:55px;line-height:55px;border-bottom:1px solid #9c9c9c;position:relative}
+			.head h3{text-align:center}
+			.head .back{position:absolute;top:10px;left:15px}
+			.head .back img{width:70%}
+			form,.content{margin:0px 25px;color:#acacac;font-size:1rem;line-height:1.5}
+			.formgroup{border-bottom:1px solid #ededed;height:60px;line-height:60px;margin-bottom:50px}
+			.form-control{background: transparent;height:55px;line-height:55px;border:none;outline:none;margin-left:10px;font-size:1rem}
+			.btn{background:#ffe5a7;border:0;border-radius:30px;height:60px;width:100%;color:#FFF;font-size:1rem;letter-spacing:3px;outline:none}
+			.content{margin-top:30px}
+			.btn-send{background:orange}
+			.form-control::-webkit-input-placeholder{color:#d1d1d1}
+			.form-control::-moz-placeholder{color:#d1d1d1}
+			.form-control:-moz-placeholder{color:#d1d1d1}
+			.form-control:-ms-input-placeholder{color:#d1d1d1}
+	    </style>
+	    <script type="text/javascript">
+	    	$(document).ready(function(){
+	    		$("#email").keyup(function(){
+				   var str= $.trim($("#email").val());
+				   if(str===''){
+				   		$("#submit").removeClass("btn-send");
+				   		$("#submit").attr("disabled","disabled");
+				   		$("#submit").val("发送验证邮件");
+				   }else{
+					   	$(".btn").addClass("btn-send");
+					    $("#submit").removeAttr("disabled");
+				   }
+			  	});
+			  	
+			  	$("#submit").click(function(){
+				  	var pattern = /\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}/;
+				  	var str=$("#email").val();
+					if (pattern.test(str)) {
+					   alert("发送成功！");
+					   var min=60;
+					   var interval=setInterval(function(){
+							min--;
+							if(min===0){
+								clearInterval(interval);
+								$(".btn").addClass("btn-send");
+								$("#submit").val("重新发送");
+								$("#submit").removeAttr("disabled");
+								$("#email").removeAttr("disabled");
+							}else{
+								$("#submit").removeClass("btn-send");
+								var msg="重新发送("+min+")";
+								$("#submit").val(msg);
+								$("#submit").attr("disabled","disabled");
+								$("#email").attr("disabled","disabled");
+							}
+						}, 1000);
+					} else{
+						alert("请输入正确的邮箱地址！");
+					}
+			  	});
+			})
+	    </script>
+	</head>
+	<body>
+		<div class="head">
+			<h3>邮箱认证</h3>
+			<span class="back"><img src="img/back.png"/></span>
+		</div>
+		<form action="" method="post">
+			<div class="formgroup">
+				<label for="email">邮箱地址</label>
+				<input type="text" id="email" class="form-control" value="" placeholder="请输入你的邮箱地址" />
+			</div>
+			<input type="button" class="btn" id="submit" value="发送验证邮件" disabled="disabled"  />
+		</form>
+		
+		<div class="content">
+			<p>认证说明：</p>
+			<p>1.验证邮件发送成功后，你的邮箱将收到一封认证邮件，请在一小时内登录你的邮箱完成认证<br />
+			2.如果收件箱里没有收到改邮件，请查看垃圾箱，以免被误判为垃圾邮件<br />
+			3.如果你的邮箱长时间没有收到我们的激活邮件。请点击重新发送邮件<br />
+			4.验证过程中，出现任何问题，可联系客服。
+			</p>
+			<p></p>
+		</div>
+		
+	</body>
+</html>
